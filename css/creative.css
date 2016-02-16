@@ -1,3 +1,13 @@
+@font-face {
+  font-family: SSP;
+  src: url("../fonts/SourceSansPro-Regular.otf");
+}
+
+@font-face {
+  font-family: SSP-Bold;
+  src: url("../fonts/SourceSansPro-Bold.otf");
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -15,6 +25,11 @@ html, body {
   height: 100%;
 }
 
+body {
+  font-family: 13px SSP;
+  line-height: 1.375px;
+}
+
 img {
   border:none;
 }
@@ -28,13 +43,33 @@ header {
     background:
     linear-gradient(rgba(57,219,73,0.7), rgba(57,219,73,0.7)),
                 rgba(57,219,73,0.7)
-                url('mountains.jpg') no-repeat center top fixed;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
+                url('../images/mountains.jpg') no-repeat center top fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+}
+
+header::before { /*grayscale for background image*/
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  -webkit-filter: grayscale(.7);
+  -webkit-filter: grayscale(70%);
+  -moz-filter: grayscale(70%);
+  filter: gray;
+  filter: grayscale(70%);
+}
+
+h1 {
+  font: 50px SSP-Bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
 
@@ -50,7 +85,7 @@ ul.nav li a:focus, ul.nav li a:active, ul.nav li a:target,
 #p1:target, #p2:target, #p3:target, #p4:target,
 #p1:focus, #p2:focus, #p3:focus, #p4:focus {
   background-color: #000;
-  color: #39DB49;
+  color: #799E86;
 }
 
 ul.nav li a:hover {
@@ -59,7 +94,7 @@ ul.nav li a:hover {
   -ms-transition: color 0.5s ease-out;
   -o-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
-  color: #39DB49;
+  color: #799E86;
   background-color: transparent;
   text-decoration: none;
   border-bottom: 0px solid transparent;
@@ -76,7 +111,7 @@ ul.nav li a:before {
   width: 0;
   transition: width 0s ease, background .5s ease;
   text-decoration: none;
-  color: #39DB49;
+  color: #799E86;
 }
 
 ul.nav li a:after {
@@ -87,21 +122,21 @@ ul.nav li a:after {
   bottom: 0;
   height: 3px;
   width: 0;
-  background: #18B728;
+  background: #597B62;
   transition: width .5s ease;
   text-decoration: none;
-  color: #39DB49;
+  color: #799E86;
 }
 
 ul.nav li a:hover:before {
-  color: #39DB49;
+  color: #799E86;
   width: 100%;
-  background: #18B728;
+  background: #597B62;
   text-decoration: none;
 }
 
 ul.nav li a:hover:after {
-  color: #39DB49;
+  color: #799E86;
   width: 100%;
   background: transparent;
   transition: all 0s ease;
@@ -120,7 +155,7 @@ ul.nav li a:hover:after {
   -ms-transition: color 0.5s ease-out;
   -o-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
-  color: #39DB49;
+  color: #799E86;
   text-decoration: none;
 }
 
@@ -193,4 +228,52 @@ ul.nav li a:hover:after {
   .navbar-header #brand::after {
     content: '';
   }
+}
+
+header .header-content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+header .header-content .contain {
+    margin: 0 auto;
+    width: 800px;
+    display: block;
+}
+
+header .header-content .contain hr {
+    margin: 30px auto;
+}
+
+header p {
+  padding-bottom: 100px;
+}
+
+hr {
+  max-width: 75px;
+  border-color: #597B62;
+  border-width: 3px;
+}
+
+.btn-primary {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 0px;
+  color: #fff;
+  padding: 14px 24px;
+}
+
+.btn-primary:hover {
+  background-color: inherit;
+  border: 1px solid #fff;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
