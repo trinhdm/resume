@@ -31,7 +31,6 @@ html {
   overflow-x: hidden;
 }
 
-
 canvas {
   display:block;
   vertical-align:bottom;
@@ -41,22 +40,7 @@ img {
   border:none;
 }
 
-/*
-header {
-    position: relative;
-    width: 100%;
-    min-height: 100%;
-    color: #fff;
-    background:
-    linear-gradient(rgba(57,219,73,0.7), rgba(57,219,73,0.7)),
-                rgba(57,219,73,1);
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}*/
-
-.header-content h1 {
+.about h1 {
   font: 400 50px Lato;
   letter-spacing: 1px;
   color: #D66360;
@@ -69,10 +53,13 @@ header {
   color: #fff;
 }
 
-h2 {
+.about h2 {
   color: #666;
 }
 
+
+
+/* highlight color */
 
 ::selection {
   background: #c65b59; /* WebKit/Blink Browsers */
@@ -85,13 +72,14 @@ h2 {
 
 /* navigation*/
 
-.youarehere {
-    color: #D66360 !important;
-    -webkit-transition: color 0.5s ease-in-out;
-    -moz-transition: color 0.5s ease-in-out;
-    -ms-transition: color 0.5s ease-in-out;
-    -o-transition: color 0.5s ease-in-out;
-    transition: color 0.5s ease-in-out;
+ul.nav li .youarehere {
+    color: #eee !important;
+    font-weight: 500;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 ul.nav li a { /*styles each link */
@@ -102,7 +90,7 @@ ul.nav li a { /*styles each link */
 
 ul.nav li a:focus, ul.nav li a:active, ul.nav li a:target {
   background-color: #000;
-  color: #D66360;
+  color: #eee;
 }
 
 ul.nav li a:hover {
@@ -153,7 +141,7 @@ ul.nav li a:hover:before {
 }
 
 ul.nav li a:hover:after {
-  color: #799E86;
+  color: #c65b59;
   width: 100%;
   background: transparent;
   transition: all 0s ease;
@@ -184,56 +172,17 @@ ul.nav li #email {
   margin-right: -30px;
 }
 
+.navbar-toggle {
+  border: 1px solid #c65b59;
+}
 
-@media(max-width:768px) {
-
-  ul.nav li a {
-    background-color: #000;
-  }
-
-  ul.nav li a:hover {
-    background-color: #000;
-  }
-
-  ul.nav li a:before {
-    height: 0;
-    width: 0;
-    transition: width 0s ease, background .5s ease;
-  }
-
-  ul.nav li a:after {
-    height: 0;
-    background: #000;
-    transition: width .5s ease;
-  }
-
-  ul.nav li a:hover:before {
-    width: 100%;
-    background: #000;
-    text-decoration: none;
-  }
-
-  ul.nav li a:hover:after {
-    width: 0%;
-    transition: all 0s ease;
-  }
-
-  #hire {
-    background-color: #000;
-  }
-
-  .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
-    background-color: #000;
-    overflow-x: hidden;
-  }
-
-  .navbar-header #brand::after {
-    content: '';
-  }
+.navbar-toggle .icon-bar {
+  background-color: #fff;
+  height: 1px;
 }
 
 
-.header-content {
+.about {
     position: absolute;
     padding-top: 90px;
     padding-left: 90px;
@@ -246,7 +195,6 @@ ul.nav li #email {
   background-color: #D66360;
   color: #fff;
   width: 100%;
-  height: 100%;
   padding: 90px;
 }
 
@@ -333,7 +281,7 @@ transition: all 0.5s ease-out;
 }
 
 @media(max-width:1024px) {
-  .container.header-content {
+  .container.about {
     width: 95%;
   }
 }
@@ -343,12 +291,15 @@ transition: all 0.5s ease-out;
     height: 115vh;
   }
 
-  .container.header-content {
+  .container.about {
     width: 61%;
   }
 }
 
 @media(min-width:768px) and (max-width:1024px) {
+  ul.nav li #email {
+    visibility: hidden;
+  }
 
   #particles-js {
     height: 120vh;
@@ -358,6 +309,65 @@ transition: all 0.5s ease-out;
 @media(max-width:768px) {
   #particles-js {
     height: 135vh;
+  }
+
+  ul.nav li:first-child {
+    margin-left: 0;
+  }
+
+  ul.nav li a {
+    background-color: #000;
+    margin-left: 15px;
+  }
+
+  ul.nav li a:hover {
+    background-color: #000;
+  }
+
+  ul.nav li a:before {
+    height: 0;
+    width: 0;
+    transition: width 0s ease, background .5s ease;
+  }
+
+  ul.nav li a:after {
+    height: 0;
+    background: #000;
+    transition: width .5s ease;
+  }
+
+  ul.nav li a:hover:before {
+    width: 100%;
+    background: #000;
+    text-decoration: none;
+  }
+
+  ul.nav li a:hover:after {
+    width: 0%;
+    transition: all 0s ease;
+  }
+
+  ul.nav li a:hover {
+    color: #eee;
+  }
+
+  ul.nav li a:focus, ul.nav li a:active, ul.nav li a:target {
+    color: #D66360;
+  }
+
+  ul.nav li .youarehere {
+    color: #D66360 !important;
+    font-weight: bold !important;
+    -webkit-transition:  all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    background-color: #000;
+    overflow-x: hidden;
   }
 }
 
