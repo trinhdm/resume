@@ -27,11 +27,15 @@ html, body {
 
 body {
   font-family: 13px SSP;
-  line-height: 1.375px;
+  line-height: 1.375;
 }
 
 img {
   border:none;
+}
+
+section {
+  padding: 100px 0;
 }
 
 header {
@@ -276,4 +280,9 @@ hr {
   -ms-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+
+.about {
+  background-color: #597B62;
+  color: #fff;
 }
