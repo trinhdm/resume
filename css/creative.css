@@ -70,6 +70,7 @@ img {
   color: #fff;
 }
 
+
 /* navigation*/
 
 ul.nav li .youarehere {
@@ -181,6 +182,19 @@ ul.nav li #email {
   height: 1px;
 }
 
+.animateTiming {
+  -webkit-animation-duration: 1s; /* for animate.css */
+  -webkit-animation-delay: 0.25s;
+}
+.animateTiming2 {
+  -webkit-animation-duration: 1s; /* for animate.css */
+  -webkit-animation-delay: 1s;
+}
+
+.notVisible {
+  opacity: 0;
+}
+
 
 .about {
     position: absolute;
@@ -195,7 +209,22 @@ ul.nav li #email {
   background-color: #D66360;
   color: #fff;
   width: 100%;
-  padding: 90px;
+  padding: 90px 90px 200px 90px;
+}
+
+.portfolio .col-md-4 {
+  color: #fff;
+  font-size: 85%;
+}
+
+.portfolio .col-md-4 .description {
+  margin-left: 15px;
+}
+
+.portfolio .col-md-4 h3 {
+  color: #aaa;
+  font-size: 15px;
+  line-height: 7px;
 }
 
 .box {
@@ -205,7 +234,7 @@ ul.nav li #email {
 	background: rgba(255,255,255,0);
 	display: inline-block;
 	cursor: pointer;
-  margin: 2% 2.5%;
+  margin: 1% 0%;
 }
 
 .box .content {
@@ -213,21 +242,23 @@ ul.nav li #email {
   text-align: center;
   opacity: 0;
   position: relative;
-  top: 25%;
-  transform: translateY(-25%);
+  top: 35%;
+  transform: translateY(-35%);
 }
 
 .box .content h3 {
   color: #666;
+  font-style: italic;
+  font-size: 20px;
 }
 
 .box:hover .content {
   opacity: 1;
-  -webkit-transition:  all 0.5s ease-out;
--moz-transition: all 0.5s ease-out;
--ms-transition: all 0.5s ease-out;
--o-transition: all 0.5s ease-out;
-transition: all 0.5s ease-out;
+  -webkit-transition:  all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-ms-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
 }
 
 .box#fg {

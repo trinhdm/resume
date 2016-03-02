@@ -11,6 +11,9 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+  <!-- Animate -->
+  <link rel="stylesheet" href="css/animate.css">
+
 
   <!-- Custom Fonts -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -51,7 +54,7 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-    <section id="p_about">
+    <section id="p_about" class="">
   <div id="particles-js">
     <div class="container about">
         <div class="row">
@@ -121,15 +124,23 @@
 <div class="row">
   <div class="col-md-12">
     <h1>Portfolio</h1>
+
+    <div class="row">
+    <div class="col-md-4">
 <div class="box" id="fg">
 	<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
     <rect class="shape" height="155" width="280" />
 	</svg>
   <div class="content">
-	<h3>CAUCI</h3>
-	<span>Wordpress theme</span>
+	<h3>open website</h3>
+</div>
+</div>
+<div class="description">
+<h3>Chinese Association @ UCI</h3>
+<span>Wordpress theme</span>
 </div></div>
 
+<div class="col-md-4">
 <div class="box" id="fg">
 	<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
     <rect class="shape" height="155" width="280" />
@@ -138,7 +149,9 @@
 	<h3>Foreground Studios</h3>
 	<span>Wordpress theme</span>
 </div></div>
+</div>
 
+<div class="col-md-4">
 <div class="box" id="fg">
 	<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
     <rect class="shape" height="155" width="280" />
@@ -147,6 +160,8 @@
 	<h3>Versa Tables</h3>
 	<span>jQuery slider</span>
 </div></div>
+</div>
+</div>
 
 </div></div>
 
@@ -234,6 +249,26 @@ $("ul.nav li a:first").addClass('youarehere');
 
     return false;
   });
+
+
+  $('.about').addClass('animated fadeIn animateTiming');
+
+  $('.portfolio .row').addClass('notVisible');
+
+  $('.contact .row').addClass('notVisible');
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 250 && scroll <= 251) {
+        $(".portfolio .row").addClass("animated fadeIn animateTiming");
+    }
+
+    else if (scroll >= 252) { /* FIX fade in for contacts */
+      $(".portfolio .row").addClass("animated fadeIn animateTiming");
+      $(".contact .row").addClass("animated fadeIn animateTiming2");
+    }
+}); //missing );
 </script>
 
 
