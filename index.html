@@ -220,9 +220,8 @@
   </div>
   <div class="col-md-3 col-sm-6 float col-xs-12">
     <div class="pull-right">
-      <i class="fa fa-linkedin fa-footer faa-float animated-hover faa-fast"></i>
-      <i class="fa fa-github fa-footer faa-float animated-hover faa-fast"></i>
-      <i class="fa fa-envelope fa-footer faa-float animated-hover faa-fast"></i>
+      <a href="https://www.linkedin.com/in/doreen-trinh-378a99100" alt="LinkedIn"><i class="fa fa-linkedin fa-footer faa-float animated-hover faa-fast"></i></a>
+      <a href="https://github.com/trinhdm/" alt="GitHub"><i class="fa fa-github fa-footer faa-float animated-hover faa-fast"></i></a>
     </div></div>
 </section>
 
@@ -289,19 +288,17 @@ $("ul.nav li a:first").addClass('youarehere');
 
 
   $('.about').addClass('animated fadeIn animateTiming');
-
   $('.portfolio .row').addClass('notVisible');
-
   $('.contact .row').addClass('notVisible');
 
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 250 && scroll <= 251) {
+    if (scroll >= 150 && scroll <= 200) {
         $(".portfolio .row").addClass("animated fadeIn animateTiming");
     }
 
-    else if (scroll >= 252) { /* FIX fade in for contacts */
+    else if (scroll >= 201) { /* FIX fade in for contacts */
       $(".portfolio .row").addClass("animated fadeIn animateTiming");
       $(".contact .row").addClass("animated fadeIn animateTiming2");
     }

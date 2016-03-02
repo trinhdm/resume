@@ -1,5 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
 
+$mainColor: #D66360;
+
+@mixin ease($property) {
+  -webkit-transition:  $property 0.5s ease;
+  -moz-transition: $property 0.5s ease;
+  -ms-transition: $property 0.5s ease;
+  -o-transition: $property 0.5s ease;
+  transition: $property 0.5s ease;
+}
+
+@mixin easeOut($property) {
+  -webkit-transition:  $property 0.5s ease-out;
+  -moz-transition: $property 0.5s ease-out;
+  -ms-transition: $property 0.5s ease-out;
+  -o-transition: $property 0.5s ease-out;
+  transition: $property 0.5s ease-out;
+}
+
+@mixin navAnimate {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  text-decoration: none;
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -43,19 +71,16 @@ img {
 a {
   font-family: Lato;
   font-weight: 700;
-  color: #D66360;
+  color: $mainColor;
   letter-spacing: 1px;
   padding-bottom: 5px;
   border-bottom: 1px solid rgba(0,0,0,0);
-  -webkit-transition: border .5s ease-out; /* Saf3.2+, Chrome */
-     -moz-transition: border .5s ease-out; /* FF3.7+ */
-       -o-transition: border .5s ease-out; /* Opera 10.5 */
-          transition: border .5s ease-out;
+  @include easeOut(border);
 }
 
 a:hover {
   text-decoration: none;
-  color: #D66360;
+  color: $mainColor;
   border-bottom: 1px solid rgba(0,0,0,0.7);
   -webkit-transition: border 0s ease-in; /* Saf3.2+, Chrome */
      -moz-transition: border 0s ease-in; /* FF3.7+ */
@@ -66,7 +91,7 @@ a:hover {
 .about h1 {
   font: 400 50px Lato;
   letter-spacing: 1px;
-  color: #D66360;
+  color: $mainColor;
 }
 
 
@@ -110,71 +135,53 @@ a:hover {
 
 /* navigation*/
 
-ul.nav li .youarehere {
-    color: #eee !important;
-    font-weight: 500;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
+ul.nav li {
+  a { /*styles each link */
+    padding: 19px 80px 19px 20px;
+    color: #aaa;
+    font: 11px Arial;
+    border-bottom: 0px solid transparent;
 
-ul.nav li a { /*styles each link */
-  padding: 19px 80px 19px 20px;
-  color: #aaa;
-  font: 11px Arial;
-  border-bottom: 0px solid transparent;
-}
+    &:focus, &:active, &:target {
+      background-color: #000;
+      color: #eee;
+      border-bottom: 0px solid transparent;
+    }
 
-ul.nav li a:focus, ul.nav li a:active, ul.nav li a:target {
-  background-color: #000;
-  color: #eee;
-  border-bottom: 0px solid transparent;
-}
+    &:hover {
+      @include easeOut(color);
+      color: $mainColor;
+      background-color: transparent;
+      text-decoration: none;
+      border-bottom: 0px solid transparent;
+    }
 
-ul.nav li a:hover {
-  -webkit-transition: color 0.5s ease-out;
-  -moz-transition: color 0.5s ease-out;
-  -ms-transition: color 0.5s ease-out;
-  -o-transition: color 0.5s ease-out;
-  transition: color 0.5s ease-out;
-  color: #D66360;
-  background-color: transparent;
-  text-decoration: none;
-  border-bottom: 0px solid transparent;
-}
+    /* css animation for nav */
+    &:before {
+      @include navAnimate;
+      left: 0;
+      transition: width 0s ease, background .5s ease;
+      color: $mainColor;
+    }
 
-/* css animation */
-ul.nav li a:before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 0;
-  transition: width 0s ease, background .5s ease;
-  text-decoration: none;
-  color: #D66360;
-}
+    &:after {
+      @include navAnimate;
+      right: 0;
+      background: #c65b59;
+      transition: width .5s ease;
+      color: $mainColor;
+    }
+  }
 
-ul.nav li a:after {
-  content: '';
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  width: 0;
-  background: #c65b59;
-  transition: width .5s ease;
-  text-decoration: none;
-  color: #D66360;
+  .youarehere {
+      color: #eee !important;
+      font-weight: 500;
+      @include ease(all);
+  }
 }
 
 ul.nav li a:hover:before {
-  color: #D66360;
+  color: $mainColor;
   width: 100%;
   background: #c65b59;
   text-decoration: none;
@@ -245,7 +252,7 @@ ul.nav li #email {
 
 
 .portfolio {
-  background-color: #D66360;
+  background-color: $mainColor;
   color: #fff;
   width: 100%;
   padding: 90px 90px 300px 90px;
@@ -453,11 +460,11 @@ ul.nav li #email {
   }
 
   ul.nav li a:focus, ul.nav li a:active, ul.nav li a:target {
-    color: #D66360;
+    color: $mainColor;
   }
 
   ul.nav li .youarehere {
-    color: #D66360 !important;
+    color: $mainColor !important;
     font-weight: bold !important;
     -webkit-transition:  all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
@@ -502,7 +509,7 @@ ul.nav li #email {
 }
 
 .fa-icon {
-  color:#D66360;
+  color:$mainColor;
   margin-top: 20px;
   padding-right: 15px;
   float: left;
@@ -510,7 +517,7 @@ ul.nav li #email {
 
 .fa-footer {
   padding-right: 35px !important;
-  color: #D66360;
+  color: $mainColor;
   float: left;
   font-size: 2.5em;
   vertical-align: middle;
