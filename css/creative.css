@@ -212,81 +212,91 @@ ul.nav li #email {
   padding: 90px 90px 200px 90px;
 }
 
-.portfolio .col-md-4 {
+.portfolio .col-xs-4 .description {
   color: #fff;
   font-size: 85%;
+  margin-left: 2px;
 }
 
-.portfolio .col-md-4 .description {
-  margin-left: 15px;
-}
-
-.portfolio .col-md-4 h3 {
+.portfolio .col-xs-4 .description h3 {
   color: #aaa;
   font-size: 15px;
   line-height: 7px;
 }
 
-.box {
-	width: 300px;
-	height: 175px;
-	position: relative;
-	background: rgba(255,255,255,0);
-	display: inline-block;
-	cursor: pointer;
-  margin: 1% 0%;
+.portfolio img {
+  height: 185px;
+  width: 100%;
+  object-fit: cover;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  z-index: -50;
 }
 
-.box .content {
-  margin: 20px;
-  text-align: center;
+
+@media(max-width: 768px) {
+  .portfolio .col-xs-4 {
+    padding: 0 5px;
+  }
+}
+
+.portfolio .thumbnail {
+  border-radius: 0px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  background-color: rgba(255, 255, 255, .2);
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+}
+
+.floatBox .content {
   opacity: 0;
-  position: relative;
+  position: absolute;
   top: 35%;
   transform: translateY(-35%);
+  left: 30%;
 }
 
-.box .content h3 {
+.floatBox .content h3 {
   color: #666;
   font-style: italic;
   font-size: 20px;
 }
 
-.box:hover .content {
+.floatBox:hover .content {
   opacity: 1;
   -webkit-transition:  all 0.5s ease;
--moz-transition: all 0.5s ease;
--ms-transition: all 0.5s ease;
--o-transition: all 0.5s ease;
-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-.box#fg {
-  background:
-      linear-gradient(rgba(57,219,73,0.7), rgba(57,219,73,0.7)),
-      rgba(57,219,73,0.7)
-      url('http://s.freshnewtracks.com/wp-content/uploads/2014/06/artworks-000082629676-lqw32k-t500x500.jpg');
-      -webkit-filter: grayscale(1);
-      filter: grayscale(1);
-}
-
-.box svg {
+.floatBox {
 	position: absolute;
-	top: 10px;
-	left: 10px;
+  top: 20%;
+  transform: translateY(-20%);
+  left: 10%;
 }
 
-.box:hover .shape {
-  stroke: 2px;
+.floatBox rect {
+	width: 100%;
+  height: 100%;
+}
+
+
+.floatBox:hover .shape {
+  stroke: 5px;
   stroke-dashoffset: 0;
   stroke-dasharray: 900;
 }
 
 .shape {
   stroke-dasharray: 0 560;
-  stroke-dashoffset: -434;
-  stroke-width: 2px;
-  fill: transparent;
+  stroke-dashoffset: -445;
+  stroke-width: 5px;
+  fill: none;
   stroke: #888;
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
 }
