@@ -3,6 +3,11 @@
   color: #fff;
   width: 100%;
   padding: 90px 90px 300px 90px;
+  overflow-x: hidden;
+
+  @include phone-and-tablet {
+    padding-left: 20px;
+  }
 
 
   a {
@@ -19,6 +24,12 @@
     color: #ddd;
     font-family: $fontFam;
     font-size: 15px;
+  }
+
+  @include phone-and-tablet {
+    .row {
+      width: 99.5%;
+    }
   }
 
   .post {
@@ -86,8 +97,9 @@
       transition: stroke-width 1s, stroke-dashoffset 2.5s, stroke-dasharray 2.5s;
 
       @include tablet {
-        stroke-dasharray: 0 1160;
-        stroke-dashoffset: -705;
+        stroke-dasharray: 0 1500; /* if above = 560 then this was 1160 */
+        stroke-dashoffset: 0;
+        transition: stroke-width 1s, stroke-dashoffset 1.5s, stroke-dasharray 1.5s;
       }
     }
 
@@ -96,6 +108,7 @@
       .shape {
         stroke-dasharray: 0 1300;
         stroke-dashoffset: 400;
+        transition: stroke-width 1s, stroke-dashoffset 1.5s, stroke-dasharray 1.5s;
       }
     }
 
